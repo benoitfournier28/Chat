@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        const send = function () {
+            const text = document.getElementById("m").value;
+            socket.emit('chat message', text);
+        }
+
+        const response = function(msg) {
+            const li = document.createElement("li");
+            const br = document.createElement("br");
+            li.innerHTML = msg;
+            // const newMess = li.innerHTML + br;
+            document.getElementById('message').appendChild(li);
+            document.getElementById("m").value = "";
+        }
+
+        socket.on('chat message', response);
+    </script>
+
+    
+
+    <div class = "zone_message">
+        <div class="zone_message--size">
+            <ul id="message">
+                <li>Bonjour comment vas-tu?</li></br>
+                <li>Je me demandais si tu étais disponible pour une partie de Among Us?</li></br>
+            </ul>
+        </div>    
+            <div class="zone_input">
+            <input id="m" autocomplete="off"/> <button onclick="send()">Envoyer</button>
+            </div>
+    </div>
+    </main>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+<body>
+    <div id = "messages"></div>
+    <form action="">
+        <input id="msg" autocomplete="off"/>
+        <button>send</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function (){
+            const socket = io();
+
+            $("form").submit(function (e) {
+                e.preventDefault();
+
+                socket.emit("chat message", $("#msg").val() );
+                $("#msg").val("");
+
+                return false;
+            });
+
+            socket.on('chat message', function (msg) {
+                $("#messages").append($("<p>").text(msg));
+            });
+        });
+        
+        // const socket = io();
+    </script>
+    
+</body>
+</html> -->
