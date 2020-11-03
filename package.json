@@ -5,13 +5,16 @@
   "main": "app.js",
   "scripts": {
     "test": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "sass": "node-sass public/css/style.scss public/css/style.css -w" 
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "node-sass-middleware": "^0.11.0",
     "nodemon": "^2.0.6",
+    "rerun-script": "^0.6.0",
     "socket.io": "^2.3.0"
   }
 }

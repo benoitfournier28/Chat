@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    color:rgb(78, 78, 78);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: rgba(25,147,147,0.1);
+}
+
+.zone_message{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    background-image: url("../imgs/background2.png");
+
+        .zone_message--size{
+        width: 80%;
+
+        #message{
+            padding-left: 7%;
+            padding-right: 7%;
+            position: relative;
+            overflow-x: scroll;
+        }
+
+        #message div{
+            position: relative;
+            margin: 40px 0 10px 0;
+        }
+
+        #message div span{
+            display: inline-block;
+            clear: both;
+            width: auto;
+            padding: 16px 40px 16px 20px;
+            background-color: palegoldenrod;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+    }
+}
+
+
+.zone_message--size #message div::before {
+	position: absolute;
+    top: 0;
+	width: 0px;
+    height: 0px;
+    transform: translate(-50%, 0%);
+    content: "";
+    background-color: transparent;
+    border-top: 15px solid palegoldenrod;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+.zone_input{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    bottom: 0%;
+    margin-bottom: 3%;
+    text-align: center;
+
+    input{
+        font-size: 1em;
+        width: 70%;
+        height: 70%;
+        border: 2px solid rgb(218, 162, 60);
+        border-radius: 5px;
+    }
+
+    input:focus{
+        border: 2px solid rgb(218, 162, 60);
+        background-color: wheat;
+    }
+
+    button{
+        padding: 10px;
+        border: 2px solid rgb(218, 162, 60);
+        border-radius: 10px;
+        color:rgb(218, 162, 60);
+        font-size: 25px;
+    }
+
+    button:hover{
+        background-color:wheat;
+        cursor: pointer;
+    }
+}
+
+
+
