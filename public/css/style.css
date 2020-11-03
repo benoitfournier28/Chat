@@ -9,8 +9,18 @@ body {
   box-sizing: border-box; }
 
 ::-webkit-scrollbar-track {
-  border-radius: 4px;
-  background-color: rgba(25, 147, 147, 0.1); }
+  -webkit-box-shadow: inset 0 0 4px rgba(151, 151, 151, 0.1);
+  border-radius: 10px;
+  background-color: #F5F5F5; }
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 4px rgba(151, 151, 151, 0.1);
+  background-color: palegoldenrod; }
 
 .zone_message {
   display: flex;
@@ -20,17 +30,19 @@ body {
   bottom: 0%;
   left: 0%;
   right: 0%;
+  margin-top: 15px;
   background-image: url("../imgs/background2.png"); }
   .zone_message .zone_message--size {
     width: 80%; }
     .zone_message .zone_message--size #message {
+      max-height: 75%;
       padding-left: 7%;
       padding-right: 7%;
       position: relative;
-      overflow-x: scroll; }
+      overflow-y: scroll; }
     .zone_message .zone_message--size #message div {
       position: relative;
-      margin: 40px 0 10px 0; }
+      margin: 20px 0 5px 0; }
     .zone_message .zone_message--size #message div span {
       display: inline-block;
       clear: both;
@@ -64,17 +76,16 @@ body {
     font-size: 1em;
     width: 70%;
     height: 70%;
-    border: 2px solid #daa23c;
+    border: 2px solid #d18f13;
     border-radius: 5px; }
   .zone_input input:focus {
-    border: 2px solid #daa23c;
-    background-color: wheat; }
+    background-color: #f1e7d5; }
   .zone_input button {
     padding: 10px;
-    border: 2px solid #daa23c;
+    border: 2px solid #d18f13;
     border-radius: 10px;
     color: #daa23c;
     font-size: 25px; }
   .zone_input button:hover {
-    background-color: wheat;
+    background-color: #f1e7d5;
     cursor: pointer; }
