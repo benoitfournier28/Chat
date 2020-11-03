@@ -1,3 +1,5 @@
+@import "./responsive.scss";
+
 body{
     margin: 0;
     padding: 0;
@@ -6,9 +8,8 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-*{
-    box-sizing: border-box;
-}
+// *{
+// }
 
 ::-webkit-scrollbar-track
 {
@@ -42,7 +43,6 @@ body{
     background-image: url("../imgs/background2.png");
 
         .zone_message--size{
-        
         width: 80%;
 
         #message{
@@ -67,6 +67,10 @@ body{
             background-color: palegoldenrod;
             border-radius: 10px;
             font-size: 0.9em;
+            @media #{$small-up}{
+                padding: 13px 37px 13px 19px;
+                font-size: 0.75em;
+            }
         }
     }
 }
@@ -92,31 +96,72 @@ body{
     height: 10%;
     bottom: 0%;
     margin-bottom: 3%;
+    color:rgb(78, 78, 78);
     text-align: center;
+
+    @media #{$small-up}{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        margin-bottom: 4%;
+    }
 
     input{
         font-size: 1em;
         width: 70%;
         height: 70%;
-        border: 2px solid rgb(209, 143, 19);
+        border: 2px solid rgb(41, 41, 41);
         border-radius: 5px;
-    }
-
-    input:focus{
-        background-color: rgb(241, 231, 213);
+        &:focus{
+            background-color: rgb(241, 231, 213);
+        }
+        @media #{$small-up}{
+            width: 70%;
+            height: 100%;
+            margin-right: 1.5%;
+            border-radius: 20px;
+            color: rgb(121, 121, 121);
+            border: 2px solid rgb(121, 121, 121);
+        }
     }
 
     button{
-        padding: 10px;
-        border: 2px solid rgb(209, 143, 19);
+        padding: 14px;
+        border: 2px solid palegoldenrod;
+        background-color: palegoldenrod;
         border-radius: 10px;
-        color:rgb(218, 162, 60);
-        font-size: 25px;
+        font-size: 1em;
+        color: rgb(78, 78, 78);
+        @media #{$small-up}{
+            border: none;
+            background-color: transparent;
+            font-size: 0.75em;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
     }
 
     button:hover{
-        background-color: rgb(241, 231, 213);
+        border: 2px solid rgb(224, 215, 131);
+        background-color: rgb(224, 215, 131);
         cursor: pointer;
+        @media #{$small-up} {
+            border: none;
+            background-color: transparent;
+        }
+    }
+
+    button::after{
+        content: "Envoyer";
+        width: 25px;
+        height: 25px;
+        @media #{$small-up}{
+            display: inline-block;
+            content: "";
+            background: url("./../imgs/send.png") no-repeat;
+            background-size: 100%;
+        }
     }
 }
 
