@@ -3,6 +3,8 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
+const messages = require("./back/message");
+
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {

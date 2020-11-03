@@ -17,32 +17,31 @@
             socket.emit('chat message', text);
         }
 
-        const response = function(msg) {
-            const li = document.createElement("li");
-            const br = document.createElement("br");
-            li.innerHTML = msg;
-            // const newMess = li.innerHTML + br;
-            document.getElementById('message').appendChild(li);
+        const newMessage = function(msg) {
+            const div = document.createElement("div");
+            div.innerHTML = `<span> ${msg} </span>`;
+            document.getElementById('message').appendChild(div);
             document.getElementById("m").value = "";
         }
 
-        socket.on('chat message', response);
+        socket.on('chat message', newMessage);
     </script>
 
     
 
     <div class = "zone_message">
         <div class="zone_message--size">
-            <ul id="message">
-                <li>Bonjour comment vas-tu?</li></br>
-                <li>Je me demandais si tu étais disponible pour une partie de Among Us?</li></br>
-            </ul>
+            <div id="message">
+                <div><span>Bonjour comment vas-tu?</span></div>
+                <div><span>Je me demandais si tu étais disponible pour une partie de Among Us?</span></div>
+            </div>
         </div>    
             <div class="zone_input">
             <input id="m" autocomplete="off"/> <button onclick="send()">Envoyer</button>
             </div>
     </div>
     </main>
+    <script src="/back/message.js"></script>
 </body>
 </html>
 

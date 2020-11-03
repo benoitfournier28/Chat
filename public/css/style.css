@@ -30,34 +30,45 @@ body{
     width: 80%;
 }
 
-.zone_message--size ul{
-    list-style: none;
-    overflow-y: scroll;
-    overflow-x: none;
+.zone_message--size #message{
+    padding-left: 7%;
+    padding-right: 7%;
+    position: relative;
+    overflow-x: scroll;
 }
 
-.zone_message--size ul li{
+.zone_message--size #message div{
     position: relative;
+    margin: 40px 0 10px 0;
+}
+
+.zone_message--size #message div span{
     display: inline-block;
     clear: both;
-    list-style: none;
     width: auto;
     padding: 16px 40px 16px 20px;
-	margin: 0 0 20px 0;
     background-color: palegoldenrod;
     border-radius: 10px;
     font-size: 0.9em;
 }
 
-.zone_message--size ul li:after {
+
+
+.zone_message--size #message div::before {
 	position: absolute;
     top: 0;
-	width: 5;
-	height: 5;
-	border-top: 3px solid palegoldenrod;
+	width: 0px;
+    height: 0px;
+    transform: translate(-50%, 0%);
+    content: "";
+    background-color: transparent;
+    border-top: 15px solid palegoldenrod;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid transparent;
 }
 
-.zone_message--size ul li:before {
+.zone_message--size #message div span:before {
 	position: absolute;
     top: 0;
 	width: 5;
